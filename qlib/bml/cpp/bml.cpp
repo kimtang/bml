@@ -14,6 +14,9 @@
 # include <boost/bind.hpp>
 # include <boost/math/distributions.hpp>
 
+#pragma warning( push )
+#pragma warning( disable : 4311)
+
 namespace qtype = kx::qtype;
 
 # define Random_generator_																		\
@@ -352,3 +355,5 @@ kx::K kurtosis_(kx::K d__)
 	bml::math::kurtosis_visitor cv;
 	return boost::apply_visitor(cv,d->second);
 }
+
+#pragma warning( pop )

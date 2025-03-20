@@ -16,7 +16,7 @@
 
 # define BOOST_DATE_TIME_POSIX_TIME_STD_CONFIG
 
-# include "k.h"
+# include <kdb/k.h>
 # include <stdexcept>
 # include <string>
 # include <boost/mpl/void.hpp>
@@ -362,7 +362,7 @@ private:
 	void decrement(){ ++q_; }
 	void advance(difference_type n) {q_=q_ - n;}
     bool equal(this_type const& o) const { return o() == this->q_; }
-	difference_type distance_to(this_type const& o) const { return std::distance(t->q_,o());} 
+	difference_type distance_to(this_type const& o) const { return std::distance(this->q_,o());}
 	reference dereference () const { return reference(q_); }
 };
 
@@ -472,6 +472,6 @@ private:
 # undef kdb_table
 # undef kdb_convert
 
-# include "kundef.hpp"
+# include <kdb/kundef.hpp>
 
 # endif

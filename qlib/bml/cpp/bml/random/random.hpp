@@ -18,6 +18,7 @@
 # include <boost/random.hpp>
 # include <boost/variant.hpp>
 # include <boost/preprocessor.hpp>
+# include <boost/bind.hpp>
 # include <boost/ref.hpp>
 # include <kdb/kdb.hpp>
 
