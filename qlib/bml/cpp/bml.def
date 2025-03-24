@@ -1,5 +1,10 @@
 
 EXPORTS
+	minstd_rand0
+	minstd_rand
+	rand48
+	ecuyer1988
+	knuth_b
 	kreutzer1986
 	taus88
 	hellekalek1995
@@ -25,47 +30,64 @@ EXPORTS
 	ranlux64_4_01
 	ranlux24
 	ranlux48
-	runiform_smallint
+	rbernoulli_distribution
+	rbeta_distribution
+	rbinomial_distribution
+	rcauchy_distribution
+	rchi_squared_distribution
+	rexponential_distribution
+	rextreme_value_distribution
+	rfisher_f_distribution
+	rgamma_distribution
+	rgeometric_distribution
+	rlaplace_distribution
+	rlognormal_distribution
+	rnegative_binomial_distribution
+	rnon_central_chi_squared_distribution
+	rnormal_distribution
+	rpoisson_distribution
+	rstudent_t_distribution
+	rtriangle_distribution
 	runiform_int_distribution
 	runiform_real_distribution
-	rbernoulli_distribution
-	rbinomial_distribution
-	rgeometric_distribution
-	rnegative_binomial_distribution
-	rpoisson_distribution
-	rexponential_distribution
-	rgamma_distribution
+	runiform_smallint
 	rweibull_distribution
-	rextreme_value_distribution
-	rnormal_distribution
-	rlognormal_distribution
-	rchi_squared_distribution
-	rcauchy_distribution
-	rfisher_f_distribution
-	rstudent_t_distribution
+	darcsine_distribution
 	dbernoulli_distribution
 	dbeta_distribution
 	dbinomial_distribution
 	dcauchy_distribution
 	dchi_squared_distribution
 	dexponential_distribution
+	dholtsmark_distribution
 	dextreme_value_distribution
 	dfisher_f_distribution
 	dgamma_distribution
 	dgeometric_distribution
 	dhypergeometric_distribution
+	dinverse_chi_squared_distribution
+	dinverse_gamma_distribution
+	dinverse_gaussian_distribution
+	dkolmogorov_smirnov_distribution
+	dlandau_distribution
 	dlaplace_distribution
 	dlogistic_distribution
 	dlognormal_distribution
+	dmapairy_distribution
 	dnegative_binomial_distribution
+	dnon_central_beta_distribution
 	dnon_central_t_distribution
+	dnon_central_chi_squared_distribution
+	dnon_central_f_distribution
 	dnormal_distribution
 	dpareto_distribution
 	dpoisson_distribution
 	drayleigh_distribution
+	dsaspoint5_distribution
 	dskew_normal_distribution
 	dstudents_t_distribution
-	dinverse_gamma_distribution
+	dtriangular_distribution
+	duniform_distribution
 	dweibull_distribution
 	cdf
 	cdf_comp
@@ -83,3 +105,4 @@ EXPORTS
 	kurtosis_
 	delete_
 	generate
+	dot_
