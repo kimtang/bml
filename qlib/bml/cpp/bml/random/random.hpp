@@ -2,23 +2,10 @@
 # ifndef BML_RANDOM_RANDOM_HPP_KKT_15_05_2014
 # define BML_RANDOM_RANDOM_HPP_KKT_15_05_2014
 
-#pragma push_macro("BOOST_MPL_CFG_NO_PREPROCESSED_HEADERS")
-#pragma push_macro("BOOST_MPL_LIMIT_LIST_SIZE")
-#pragma push_macro("BOOST_MPL_LIMIT_VECTOR_SIZE")
-
-# undef BOOST_MPL_CFG_NO_PREPROCESSED_HEADERS 
-# undef BOOST_MPL_LIMIT_LIST_SIZE 
-# undef BOOST_MPL_LIMIT_VECTOR_SIZE
-
-
-# define BOOST_MPL_CFG_NO_PREPROCESSED_HEADERS 
-# define BOOST_MPL_LIMIT_LIST_SIZE 30 
-# define BOOST_MPL_LIMIT_VECTOR_SIZE 30
-
 # include <boost/random.hpp>
 # include <boost/variant.hpp>
-# include <boost/preprocessor.hpp>
 # include <boost/bind.hpp>
+# include <boost/preprocessor.hpp>
 # include <boost/ref.hpp>
 # include <kdb/kdb.hpp>
 
@@ -48,10 +35,10 @@ namespace bml {
 (lagged_fibonacci4423)						\
 (lagged_fibonacci9689)						\
 (lagged_fibonacci19937)						\
-(lagged_fibonacci23209)						\
-(lagged_fibonacci44497)						\
 
 # define Random_generator2_					\
+(lagged_fibonacci23209)						\
+(lagged_fibonacci44497)						\
 (ranlux3)									\
 (ranlux4)									\
 (ranlux64_3)								\

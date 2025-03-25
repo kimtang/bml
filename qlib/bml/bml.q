@@ -117,7 +117,7 @@ if[not`.bml.lib.type~key`.bml.lib.type;.bml.lib.type:`Release];  / default is re
 .bml.dist[`weibull]: .bml.lib.path 2: (`dweibull_distribution;2)
 
 
-.bml.dot: .bml.lib.path 2: (`dot_;2)
+// .bml.dot: .bml.lib.path 2: (`dot_;2)
 
 
 .bml.cdf0: .bml.lib.path 2: (`cdf;2)

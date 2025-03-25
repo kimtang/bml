@@ -10,6 +10,7 @@
 # include <boost/variant.hpp>
 # include <boost/preprocessor.hpp>
 # include <boost/ref.hpp>
+# include <boost/bind.hpp>
 # include <kdb/kdb.hpp>
 
 # include <cstdint>
@@ -36,14 +37,14 @@ namespace bml{namespace math{
 (inverse_gaussian_distribution<>)							\
 (kolmogorov_smirnov_distribution<>)							\
 (landau_distribution<>)											\
+
+# define MATH_DIST_generator2_								\
 (laplace_distribution<>)										\
 (logistic_distribution<>)										\
 (lognormal_distribution<>)										\
 (mapairy_distribution<>)									\
 (negative_binomial_distribution<>)							\
 (non_central_beta_distribution<>)							\
-
-# define MATH_DIST_generator2_								\
 (non_central_t_distribution<>)								\
 (non_central_chi_squared_distribution<>)								\
 (non_central_f_distribution<>)									\
@@ -93,7 +94,7 @@ public:
 	kx::K operator()(G* g){
 		typedef typename G::value_type value_type; 
 		kx::vector<typename bml::math::tool::convert<value_type>::type > result(k_.size());
-		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(boost::math::cdf<G,value_type>,*g,_1));
+		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(boost::math::cdf<G,value_type>,*g, boost::placeholders::_1));
 		return result;
 	}
 
@@ -119,7 +120,7 @@ public:
 		typedef typename G::value_type value_type; 
 		kx::vector<typename bml::math::tool::convert<value_type>::type > result(k_.size());
 		//std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(boost::math::chf<G,value_type>,*g,_1));
-		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(cdf_comp_<G,value_type>,*g,_1));
+		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(cdf_comp_<G,value_type>,*g, boost::placeholders::_1));
 		return result;
 	}
 
@@ -138,7 +139,7 @@ public:
 	kx::K operator()(G* g){
 		typedef typename G::value_type value_type; 
 		kx::vector<typename bml::math::tool::convert<value_type>::type > result(k_.size());
-		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(boost::math::pdf<G,value_type>,*g,_1));
+		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(boost::math::pdf<G,value_type>,*g, boost::placeholders::_1));
 		return result;
 	}
 
@@ -157,7 +158,7 @@ public:
 	kx::K operator()(G* g){
 		typedef typename G::value_type value_type; 
 		kx::vector<typename bml::math::tool::convert<value_type>::type > result(k_.size());
-		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(boost::math::quantile<G,value_type>,*g,_1));
+		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(boost::math::quantile<G,value_type>,*g, boost::placeholders::_1));
 		return result;
 	}
 
@@ -182,7 +183,7 @@ public:
 	kx::K operator()(G* g){
 		typedef typename G::value_type value_type; 
 		kx::vector<typename bml::math::tool::convert<value_type>::type > result(k_.size());
-		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(quantile_comp_<G,value_type>,*g,_1));
+		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(quantile_comp_<G,value_type>,*g, boost::placeholders::_1));
 		return result;
 	}
 
@@ -201,7 +202,7 @@ public:
 	kx::K operator()(G* g){
 		typedef typename G::value_type value_type; 
 		kx::vector<typename bml::math::tool::convert<value_type>::type > result(k_.size());
-		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(boost::math::hazard<G,value_type>,*g,_1));
+		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(boost::math::hazard<G,value_type>,*g, boost::placeholders::_1));
 		return result;
 	}
 
@@ -220,7 +221,7 @@ public:
 	kx::K operator()(G* g){
 		typedef typename G::value_type value_type; 
 		kx::vector<typename bml::math::tool::convert<value_type>::type > result(k_.size());
-		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(boost::math::chf<G,value_type>,*g,_1));
+		std::transform(k_.begin(),k_.end(),result.begin(),boost::bind<value_type>(boost::math::chf<G,value_type>,*g, boost::placeholders::_1));
 		return result;
 	}
 
