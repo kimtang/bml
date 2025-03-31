@@ -1,58 +1,56 @@
 
 # define BOOST_MATH_ASSERT_UNDEFINED_POLICY false
 
-# include <cstdint>
-# include <boost/math/distributions.hpp>
-# include <bml/math/math.hpp>
-# include <kdb/kdb.hpp>
-
 #pragma warning( push )
 #pragma warning( disable : 4311)
 
-// namespace bml { namespace math { distribution_map_ distribution_map; } }
+# include <cstdint>
+# include <boost/math/distributions.hpp>
+# include <bml/math/distributions.hpp>
+# include <kdb/kdb.hpp>
 
 namespace qtype = kx::qtype;
 
 # define FDIST_table_dim 3
 
 # define FDIST_table1																				\
-((darcsine_distribution,arcsine_distribution<>,(float_)(float_)))									\
-((dbernoulli_distribution,bernoulli_distribution<>,(float_)))										\
-((dbeta_distribution,beta_distribution<>,(float_)(float_)))											\
-((dbinomial_distribution,binomial_distribution<>,(float_)(float_)))									\
-((dcauchy_distribution,cauchy_distribution<>,(float_)(float_)))										\
-((dchi_squared_distribution,chi_squared_distribution<>,(float_)))									\
-((dexponential_distribution,exponential_distribution<>,(float_)))									\
-((dextreme_value_distribution,extreme_value_distribution<>,(float_)(float_)))						\
-((dfisher_f_distribution,fisher_f_distribution<>,(float_)(float_)))									\
-((dgamma_distribution,gamma_distribution<>,(float_)(float_)))										\
-((dgeometric_distribution,geometric_distribution<>,(float_)))										\
-((dholtsmark_distribution,holtsmark_distribution<>,(float_)(float_)))								\
-((dhypergeometric_distribution,hypergeometric_distribution<>,(long_)(long_)(long_)))				\
-((dinverse_chi_squared_distribution,inverse_chi_squared_distribution<>,(float_)(float_)))			\
-((dinverse_gamma_distribution,inverse_gamma_distribution<>,(float_)(float_)))			\
-((dinverse_gaussian_distribution,inverse_gaussian_distribution<>,(float_)(float_)))			\
-((dkolmogorov_smirnov_distribution,kolmogorov_smirnov_distribution<>,(float_)))			\
-((dlandau_distribution,landau_distribution<>,(float_)(float_)))			\
-((dlaplace_distribution,laplace_distribution<>,(float_)(float_)))									\
-((dlogistic_distribution,logistic_distribution<>,(float_)(float_)))									\
-((dmapairy_distribution,mapairy_distribution<>,(float_)(float_)))								\
-((dlognormal_distribution,lognormal_distribution<>,(float_)(float_)))								\
-((dnegative_binomial_distribution,negative_binomial_distribution<>,(float_)(float_)))				\
-((dnon_central_beta_distribution,non_central_beta_distribution<>,(float_)(float_)(float_)))			\
-((dnon_central_t_distribution,non_central_t_distribution<>,(float_)(float_)))						\
-((dnon_central_chi_squared_distribution,non_central_chi_squared_distribution<>,(float_)(float_)))						\
-((dnon_central_f_distribution,non_central_f_distribution<>,(float_)(float_)(float_)))						\
-((dnormal_distribution,normal_distribution<>,(float_)(float_)))										\
-((dpareto_distribution,pareto_distribution<>,(float_)(float_)))										\
-((dpoisson_distribution,poisson_distribution<>,(float_)))											\
-((drayleigh_distribution,rayleigh_distribution<>,(float_)))											\
-((dsaspoint5_distribution,saspoint5_distribution<>,(float_)(float_)))											\
-((dskew_normal_distribution,skew_normal_distribution<>,(float_)(float_)(float_)))                   \
-((dstudents_t_distribution,students_t_distribution<>,(float_)))										\
-((dtriangular_distribution,triangular_distribution<>,(float_)(float_)(float_)))										\
-((duniform_distribution,uniform_distribution<>,(float_)(float_)))										\
-((dweibull_distribution,weibull_distribution<>,(float_)(float_)))									\
+((bml_dist_arcsine,arcsine_distribution<>,(float_)(float_)))									\
+((bml_dist_bernoulli,bernoulli_distribution<>,(float_)))										\
+((bml_dist_beta,beta_distribution<>,(float_)(float_)))											\
+((bml_dist_binomial,binomial_distribution<>,(float_)(float_)))									\
+((bml_dist_cauchy,cauchy_distribution<>,(float_)(float_)))										\
+((bml_dist_chi_squared,chi_squared_distribution<>,(float_)))									\
+((bml_dist_exponential,exponential_distribution<>,(float_)))									\
+((bml_dist_extreme_value,extreme_value_distribution<>,(float_)(float_)))						\
+((bml_dist_fisher_f,fisher_f_distribution<>,(float_)(float_)))									\
+((bml_dist_gamma,gamma_distribution<>,(float_)(float_)))										\
+((bml_dist_geometric,geometric_distribution<>,(float_)))										\
+((bml_dist_holtsmark,holtsmark_distribution<>,(float_)(float_)))								\
+((bml_dist_hypergeometric,hypergeometric_distribution<>,(long_)(long_)(long_)))				\
+((bml_dist_inverse_chi_squared,inverse_chi_squared_distribution<>,(float_)(float_)))			\
+((bml_dist_inverse_gamma,inverse_gamma_distribution<>,(float_)(float_)))			\
+((bml_dist_inverse_gaussian,inverse_gaussian_distribution<>,(float_)(float_)))			\
+((bml_dist_kolmogorov_smirnov,kolmogorov_smirnov_distribution<>,(float_)))			\
+((bml_dist_landau,landau_distribution<>,(float_)(float_)))			\
+((bml_dist_laplace,laplace_distribution<>,(float_)(float_)))									\
+((bml_dist_logistic,logistic_distribution<>,(float_)(float_)))									\
+((bml_dist_mapairy,mapairy_distribution<>,(float_)(float_)))								\
+((bml_dist_lognormal,lognormal_distribution<>,(float_)(float_)))								\
+((bml_dist_negative_binomial,negative_binomial_distribution<>,(float_)(float_)))				\
+((bml_dist_non_central_beta,non_central_beta_distribution<>,(float_)(float_)(float_)))			\
+((bml_dist_non_central_t,non_central_t_distribution<>,(float_)(float_)))						\
+((bml_dist_non_central_chi_squared,non_central_chi_squared_distribution<>,(float_)(float_)))						\
+((bml_dist_non_central_f,non_central_f_distribution<>,(float_)(float_)(float_)))						\
+((bml_dist_normal,normal_distribution<>,(float_)(float_)))										\
+((bml_dist_pareto,pareto_distribution<>,(float_)(float_)))										\
+((bml_dist_poisson,poisson_distribution<>,(float_)))											\
+((bml_dist_rayleigh,rayleigh_distribution<>,(float_)))											\
+((bml_dist_saspoint5,saspoint5_distribution<>,(float_)(float_)))											\
+((bml_dist_skew_normal,skew_normal_distribution<>,(float_)(float_)(float_)))                   \
+((bml_dist_students_t,students_t_distribution<>,(float_)))										\
+((bml_dist_triangular,triangular_distribution<>,(float_)(float_)(float_)))										\
+((bml_dist_uniform,uniform_distribution<>,(float_)(float_)))										\
+((bml_dist_weibull,weibull_distribution<>,(float_)(float_)))									\
 
 
 # define FDIST_create_argument(z,n,data) kx::K BOOST_PP_CAT(k,n)
@@ -82,84 +80,84 @@ BOOST_PP_SEQ_FOR_EACH(FDIST_generator, ~, FDIST_table1)
 //	return kx::kj(ptr);
 //}
 
-kx::K cdf(kx::K d__, kx::K x_)
+kx::K bml_dist_cdf0(kx::K d__, kx::K x_)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
-	kx::vector<qtype::float_> x(x_);
+	kx::raw_vector<qtype::float_> x(x_);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
 	if (bml::math::distribution_map.end() == d) { return kx::kb(0); }
 
-	bml::math::cdf_visitor<kx::vector<qtype::float_> > cv(x);
+	bml::math::cdf_visitor<kx::raw_vector<qtype::float_> > cv(x);
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K cdf_comp(kx::K d__, kx::K x_)
+kx::K bml_dist_cdf_comp0(kx::K d__, kx::K x_)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
-	kx::vector<qtype::float_> x(x_);
+	kx::raw_vector<qtype::float_> x(x_);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
 	if (bml::math::distribution_map.end() == d) { return kx::kb(0); }
 
-	bml::math::cdf_comp_visitor<kx::vector<qtype::float_> > cv(x);
+	bml::math::cdf_comp_visitor<kx::raw_vector<qtype::float_> > cv(x);
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K pdf(kx::K d__, kx::K x_)
+kx::K bml_dist_pdf0(kx::K d__, kx::K x_)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
-	kx::vector<qtype::float_> x(x_);
+	kx::raw_vector<qtype::float_> x(x_);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
 	if (bml::math::distribution_map.end() == d) { return kx::kb(0); }
 
-	bml::math::pdf_visitor<kx::vector<qtype::float_> > cv(x);
+	bml::math::pdf_visitor<kx::raw_vector<qtype::float_> > cv(x);
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K quantile(kx::K d__, kx::K x_)
+kx::K bml_dist_quantile0(kx::K d__, kx::K x_)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
-	kx::vector<qtype::float_> x(x_);
+	kx::raw_vector<qtype::float_> x(x_);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
 	if (bml::math::distribution_map.end() == d) { return kx::kb(0); }
 
-	bml::math::quantile_visitor<kx::vector<qtype::float_> > cv(x);
+	bml::math::quantile_visitor<kx::raw_vector<qtype::float_> > cv(x);
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K quantile_comp(kx::K d__, kx::K x_)
+kx::K bml_dist_quantile_comp0(kx::K d__, kx::K x_)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
-	kx::vector<qtype::float_> x(x_);
+	kx::raw_vector<qtype::float_> x(x_);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
 	if (bml::math::distribution_map.end() == d) { return kx::kb(0); }
 
-	bml::math::quantile_comp_visitor<kx::vector<qtype::float_> > cv(x);
+	bml::math::quantile_comp_visitor<kx::raw_vector<qtype::float_> > cv(x);
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K hazard(kx::K d__, kx::K x_)
+kx::K bml_dist_hazard0(kx::K d__, kx::K x_)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
-	kx::vector<qtype::float_> x(x_);
+	kx::raw_vector<qtype::float_> x(x_);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
 	if (bml::math::distribution_map.end() == d) { return kx::kb(0); }
 
-	bml::math::hazard_visitor<kx::vector<qtype::float_> > cv(x);
+	bml::math::hazard_visitor<kx::raw_vector<qtype::float_> > cv(x);
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K chf(kx::K d__, kx::K x_)
+kx::K bml_dist_chf0(kx::K d__, kx::K x_)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
-	kx::vector<qtype::float_> x(x_);
+	kx::raw_vector<qtype::float_> x(x_);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
 	if (bml::math::distribution_map.end() == d) { return kx::kb(0); }
 
-	bml::math::chf_visitor<kx::vector<qtype::float_> > cv(x);
+	bml::math::chf_visitor<kx::raw_vector<qtype::float_> > cv(x);
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K mean_(kx::K d__)
+kx::K bml_dist_mean0(kx::K d__)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
@@ -169,7 +167,7 @@ kx::K mean_(kx::K d__)
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K median_(kx::K d__)
+kx::K bml_dist_median0(kx::K d__)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
@@ -179,7 +177,7 @@ kx::K median_(kx::K d__)
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K mode_(kx::K d__)
+kx::K bml_dist_mode0(kx::K d__)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
@@ -189,7 +187,7 @@ kx::K mode_(kx::K d__)
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K standard_deviation_(kx::K d__)
+kx::K bml_dist_standard_deviation0(kx::K d__)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
@@ -199,7 +197,7 @@ kx::K standard_deviation_(kx::K d__)
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K variance_(kx::K d__)
+kx::K bml_dist_variance0(kx::K d__)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
@@ -209,7 +207,7 @@ kx::K variance_(kx::K d__)
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K skewness_(kx::K d__)
+kx::K bml_dist_skewness0(kx::K d__)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
@@ -219,7 +217,7 @@ kx::K skewness_(kx::K d__)
 	return boost::apply_visitor(cv, d->second);
 }
 
-kx::K kurtosis_(kx::K d__)
+kx::K bml_dist_kurtosis0(kx::K d__)
 {
 	kx::result_of::value<qtype::long_>::type d_ = kx::value<qtype::long_>(d__);
 	bml::math::distribution_map_::iterator d = bml::math::distribution_map.find(d_);
@@ -229,9 +227,8 @@ kx::K kurtosis_(kx::K d__)
 	return boost::apply_visitor(cv, d->second);
 }
 
+#pragma warning( pop )
+
 # undef Random_generator1_
 # undef Random_generator2_
-
-#undef FDIST_table1
-
-#pragma warning( pop )
+# undef FDIST_table1

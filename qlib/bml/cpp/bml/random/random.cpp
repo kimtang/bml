@@ -10,8 +10,6 @@
 
 namespace qtype = kx::qtype;
 
-// namespace bml {namespace random { generator_map_ generator_map; distribution_map_ distribution_map; }}
-
 # define Random_generator1_				\
 (minstd_rand0)							\
 (minstd_rand)							\
@@ -49,7 +47,7 @@ namespace qtype = kx::qtype;
 
 
 # define Random_generator(r,data,elem)															\
-kx::K elem(kx::K seed_)																			\
+kx::K BOOST_PP_CAT(bml_seed_,elem)(kx::K seed_)														\
 {																								\
 	kx::result_of::value<qtype::long_>::type seed = kx::value<qtype::long_>(seed_);				\
 	boost::random::elem* gst = new boost::random::elem(seed);									\
@@ -64,28 +62,28 @@ BOOST_PP_SEQ_FOR_EACH(Random_generator, _, Random_generator2_)
 # define DIST_table_dim 3
 
 # define DIST_table																			\
-((rbernoulli_distribution,bernoulli_distribution<>,(float_)))									\
-((rbeta_distribution,beta_distribution<>,(float_),(float_)))									\
-((rbinomial_distribution,binomial_distribution<>,(long_)(float_)))								\
-((rcauchy_distribution,cauchy_distribution<>,(float_)(float_)))									\
-((rchi_squared_distribution,chi_squared_distribution<>,(float_)))								\
-((rexponential_distribution,exponential_distribution<>,(float_)))								\
-((rextreme_value_distribution,extreme_value_distribution<>,(float_)(float_)))					\
-((rfisher_f_distribution,fisher_f_distribution<>,(float_)(float_)))								\
-((rgamma_distribution,gamma_distribution<>,(float_)(float_)))									\
-((rgeometric_distribution,geometric_distribution<>,(float_)))									\
-((rlaplace_distribution,laplace_distribution<>,(float_),(float_)))								\
-((rlognormal_distribution,lognormal_distribution<>,(float_)(float_)))							\
-((rnegative_binomial_distribution,negative_binomial_distribution<>,(long_)(float_)))			\
-((rnon_central_chi_squared_distribution,non_central_chi_squared_distribution<>,(float_)(float_)))\
-((rnormal_distribution,normal_distribution<>,(float_)(float_)))									\
-((rpoisson_distribution,poisson_distribution<>,(float_)))										\
-((rstudent_t_distribution,student_t_distribution<>,(float_)))									\
-((rtriangle_distribution,triangle_distribution<>,(float_)(float_)))								\
-((runiform_int_distribution,uniform_int_distribution<>,(long_)(long_)))							\
-((runiform_real_distribution,uniform_real_distribution<>,(float_)(float_)))						\
-((runiform_smallint,uniform_smallint<>,(long_)(long_)))											\
-((rweibull_distribution,weibull_distribution<>,(float_)(float_)))								\
+((bml_rand_bernoulli,bernoulli_distribution<>,(float_)))									\
+((bml_rand_beta,beta_distribution<>,(float_),(float_)))									\
+((bml_rand_binomial,binomial_distribution<>,(long_)(float_)))								\
+((bml_rand_cauchy,cauchy_distribution<>,(float_)(float_)))									\
+((bml_rand_chi_squared,chi_squared_distribution<>,(float_)))								\
+((bml_rand_exponential,exponential_distribution<>,(float_)))								\
+((bml_rand_extreme_value,extreme_value_distribution<>,(float_)(float_)))					\
+((bml_rand_fisher_f,fisher_f_distribution<>,(float_)(float_)))								\
+((bml_rand_gamma,gamma_distribution<>,(float_)(float_)))									\
+((bml_rand_geometric,geometric_distribution<>,(float_)))									\
+((bml_rand_laplace,laplace_distribution<>,(float_),(float_)))								\
+((bml_rand_lognormal,lognormal_distribution<>,(float_)(float_)))							\
+((bml_rand_negative_binomial,negative_binomial_distribution<>,(long_)(float_)))			\
+((bml_rand_non_central_chi_squared,non_central_chi_squared_distribution<>,(float_)(float_)))\
+((bml_rand_normal,normal_distribution<>,(float_)(float_)))									\
+((bml_rand_poisson,poisson_distribution<>,(float_)))										\
+((bml_rand_student_t,student_t_distribution<>,(float_)))									\
+((bml_rand_triangle,triangle_distribution<>,(float_)(float_)))								\
+((bml_rand_uniform_int,uniform_int_distribution<>,(long_)(long_)))							\
+((bml_rand_uniform_real,uniform_real_distribution<>,(float_)(float_)))						\
+((bml_rand_uniform_smallint,uniform_smallint<>,(long_)(long_)))											\
+((bml_rand_weibull,weibull_distribution<>,(float_)(float_)))								\
 
 
 // (discrete_distribution<>)								\
@@ -111,15 +109,7 @@ BOOST_PP_SEQ_FOR_EACH(Random_generator, _, Random_generator2_)
 
 BOOST_PP_SEQ_FOR_EACH(DIST_generator, ~, DIST_table)
 
-kx::K uniform_01()
-{
-	boost::random::uniform_01<>* dst = new boost::random::uniform_01<>();
-	std::uintptr_t ptr = reinterpret_cast<long>(dst);
-	bml::random::distribution_map[ptr] = dst;
-	return kx::kj(ptr);
-}
-
-kx::K delete_(kx::K ptr_)
+kx::K bml_rand_delete0(kx::K ptr_)
 {
 	kx::result_of::value<qtype::long_>::type ptr = kx::value<qtype::long_>(ptr_);
 	bml::random::generator_map_::iterator git = bml::random::generator_map.find(ptr);
@@ -140,7 +130,7 @@ kx::K delete_(kx::K ptr_)
 }
 
 
-kx::K generate(kx::K g__, kx::K d__, kx::K num_)
+kx::K bml_rand_generate0(kx::K g__, kx::K d__, kx::K num_)
 {
 	kx::result_of::value<qtype::long_>::type g_ = kx::value<qtype::long_>(g__);
 	bml::random::generator_map_::iterator g = bml::random::generator_map.find(g_);

@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 26)
 
 # set(Boost_DEBUG ON)
 set(BOOST_ROOT "C:\\boost")
-add_library(bml SHARED "bml.cpp" "random.cpp" "distributions.cpp")
+add_library(bml SHARED "bml.cpp" "bml/random/random.cpp" "bml/math/distributions.cpp" "statistics.cpp" "special_functions.cpp"  )
 target_include_directories(bml PRIVATE "${PROJECT_SOURCE_DIR}/bml/math")
 target_include_directories(bml PRIVATE "${PROJECT_SOURCE_DIR}/bml/random")
 target_include_directories(bml PRIVATE "${PROJECT_SOURCE_DIR}/kdb")

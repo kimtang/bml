@@ -1,10 +1,6 @@
 
-# ifndef BML_MATH_MATH_HPP_KKT_17_05_2014
-# define BML_MATH_MATH_HPP_KKT_17_05_2014
-
-# undef BOOST_MPL_CFG_NO_PREPROCESSED_HEADERS 
-# undef BOOST_MPL_LIMIT_LIST_SIZE 
-# undef BOOST_MPL_LIMIT_VECTOR_SIZE
+# ifndef BML_MATH_DISTRIBUTIONS_HPP_KKT_17_05_2014
+# define BML_MATH_DISTRIBUTIONS_HPP_KKT_17_05_2014
 
 # include <boost/math/distributions.hpp>
 # include <boost/variant.hpp>

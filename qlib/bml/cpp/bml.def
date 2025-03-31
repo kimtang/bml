@@ -1,108 +1,126 @@
-
 EXPORTS
-	minstd_rand0
-	minstd_rand
-	rand48
-	ecuyer1988
-	knuth_b
-	kreutzer1986
-	taus88
-	hellekalek1995
-	mt11213b
-	mt19937
-	mt19937_64
-	lagged_fibonacci607
-	lagged_fibonacci1279
-	lagged_fibonacci2281
-	lagged_fibonacci3217
-	lagged_fibonacci4423
-	lagged_fibonacci9689
-	lagged_fibonacci19937
-	lagged_fibonacci23209
-	lagged_fibonacci44497
-	ranlux3
-	ranlux4
-	ranlux64_3
-	ranlux64_4
-	ranlux3_01
-	ranlux4_01
-	ranlux64_3_01
-	ranlux64_4_01
-	ranlux24
-	ranlux48
-	rbernoulli_distribution
-	rbeta_distribution
-	rbinomial_distribution
-	rcauchy_distribution
-	rchi_squared_distribution
-	rexponential_distribution
-	rextreme_value_distribution
-	rfisher_f_distribution
-	rgamma_distribution
-	rgeometric_distribution
-	rlaplace_distribution
-	rlognormal_distribution
-	rnegative_binomial_distribution
-	rnon_central_chi_squared_distribution
-	rnormal_distribution
-	rpoisson_distribution
-	rstudent_t_distribution
-	rtriangle_distribution
-	runiform_int_distribution
-	runiform_real_distribution
-	runiform_smallint
-	rweibull_distribution
-	darcsine_distribution
-	dbernoulli_distribution
-	dbeta_distribution
-	dbinomial_distribution
-	dcauchy_distribution
-	dchi_squared_distribution
-	dexponential_distribution
-	dholtsmark_distribution
-	dextreme_value_distribution
-	dfisher_f_distribution
-	dgamma_distribution
-	dgeometric_distribution
-	dhypergeometric_distribution
-	dinverse_chi_squared_distribution
-	dinverse_gamma_distribution
-	dinverse_gaussian_distribution
-	dkolmogorov_smirnov_distribution
-	dlandau_distribution
-	dlaplace_distribution
-	dlogistic_distribution
-	dlognormal_distribution
-	dmapairy_distribution
-	dnegative_binomial_distribution
-	dnon_central_beta_distribution
-	dnon_central_t_distribution
-	dnon_central_chi_squared_distribution
-	dnon_central_f_distribution
-	dnormal_distribution
-	dpareto_distribution
-	dpoisson_distribution
-	drayleigh_distribution
-	dsaspoint5_distribution
-	dskew_normal_distribution
-	dstudents_t_distribution
-	dtriangular_distribution
-	duniform_distribution
-	dweibull_distribution
-	cdf
-	cdf_comp
-	pdf
-	quantile
-	quantile_comp
-	hazard
-	chf
-	mean_
-	median_
-	mode_
-	standard_deviation_
-	variance_
-	skewness_
-	kurtosis_
-	delete_
-	generate
-	dot_
+	bml_seed_minstd_rand0 ; 1
+	bml_seed_minstd_rand ; 1
+	bml_seed_rand48 ; 1
+	bml_seed_ecuyer1988 ; 1
+	bml_seed_knuth_b ; 1
+	bml_seed_kreutzer1986 ; 1
+	bml_seed_taus88 ; 1
+	bml_seed_hellekalek1995 ; 1
+	bml_seed_mt11213b ; 1
+	bml_seed_mt19937 ; 1
+	bml_seed_mt19937_64 ; 1
+	bml_seed_lagged_fibonacci607 ; 1
+	bml_seed_lagged_fibonacci1279 ; 1
+	bml_seed_lagged_fibonacci2281 ; 1
+	bml_seed_lagged_fibonacci3217 ; 1
+	bml_seed_lagged_fibonacci4423 ; 1
+	bml_seed_lagged_fibonacci9689 ; 1
+	bml_seed_lagged_fibonacci19937 ; 1
+	bml_seed_lagged_fibonacci23209 ; 1
+	bml_seed_lagged_fibonacci44497 ; 1
+	bml_seed_ranlux3 ; 1
+	bml_seed_ranlux4 ; 1
+	bml_seed_ranlux64_3 ; 1
+	bml_seed_ranlux64_4 ; 1
+	bml_seed_ranlux3_01 ; 1
+	bml_seed_ranlux4_01 ; 1
+	bml_seed_ranlux64_3_01 ; 1
+	bml_seed_ranlux64_4_01 ; 1
+	bml_seed_ranlux24 ; 1
+	bml_seed_ranlux48 ; 1
+	;;
+	bml_rand_bernoulli ; 1
+	bml_rand_beta ; 2
+	bml_rand_binomial ; 2
+	bml_rand_cauchy ; 2
+	bml_rand_chi_squared ; 1
+	bml_rand_exponential ; 1
+	bml_rand_extreme_value ; 2
+	bml_rand_fisher_f ; 2
+	bml_rand_gamma ; 2
+	bml_rand_geometric ; 1
+	bml_rand_laplace ; 2
+	bml_rand_lognormal ; 2
+	bml_rand_negative_binomial ; 2
+	bml_rand_non_central_chi_squared ; 2
+	bml_rand_normal ; 2
+	bml_rand_poisson ; 1
+	bml_rand_student_t ; 1
+	bml_rand_triangle ; 2
+	bml_rand_uniform_int ; 2
+	bml_rand_uniform_real ; 2
+	bml_rand_uniform_smallint ; 2
+	bml_rand_weibull ; 2
+	bml_rand_delete0 ; 1
+	bml_rand_generate0 ; 3
+	;;
+	bml_dist_arcsine ; 2
+	bml_dist_bernoulli ; 1
+	bml_dist_beta ; 2
+	bml_dist_binomial ; 2
+	bml_dist_cauchy ; 2
+	bml_dist_chi_squared ; 1
+	bml_dist_exponential ; 1
+	bml_dist_holtsmark ; 2
+	bml_dist_extreme_value ; 2
+	bml_dist_fisher_f ; 2
+	bml_dist_gamma ; 1
+	bml_dist_geometric ; 2
+	bml_dist_hypergeometric ; 3
+	bml_dist_inverse_chi_squared ; 2
+	bml_dist_inverse_gamma ; 2
+	bml_dist_inverse_gaussian ; 2
+	bml_dist_kolmogorov_smirnov ; 2
+	bml_dist_landau ; 2
+	bml_dist_laplace ; 2
+	bml_dist_logistic ; 2
+	bml_dist_lognormal ; 2
+	bml_dist_mapairy ; 2
+	bml_dist_negative_binomial ; 2
+	bml_dist_non_central_beta ; 3
+	bml_dist_non_central_t ; 2
+	bml_dist_non_central_chi_squared ; 3
+	bml_dist_non_central_f ; 2
+	bml_dist_normal ; 2
+	bml_dist_pareto ; 2
+	bml_dist_poisson ; 1
+	bml_dist_rayleigh ; 1
+	bml_dist_saspoint5 ; 2
+	bml_dist_skew_normal ; 3
+	bml_dist_students_t ; 1
+	bml_dist_triangular ; 3
+	bml_dist_uniform ; 2
+	bml_dist_weibull ; 2
+
+	bml_dist_cdf0 ; 2
+	bml_dist_cdf_comp0 ; 2
+	bml_dist_pdf0 ; 2
+	bml_dist_quantile0 ; 2
+	bml_dist_quantile_comp0 ; 2
+	bml_dist_hazard0 ; 2
+	bml_dist_chf0 ; 2
+	bml_dist_mean0 ; 1
+	bml_dist_median0 ; 1
+	bml_dist_mode0 ; 1
+	bml_dist_standard_deviation0 ; 1
+	bml_dist_variance0 ; 1
+	bml_dist_skewness0 ; 1
+	bml_dist_kurtosis0 ; 1
+	;;
+	bml_stat_mean ; 1
+	bml_stat_variance ; 1
+	bml_stat_skewness ; 1
+	bml_stat_kurtosis ; 1
+	bml_stat_first_four_moments ; 1
+	bml_stat_median ; 1
+	bml_stat_interquartile_range ; 1
+	bml_stat_gini_coefficient ; 1
+	bml_stat_covariance ; 2
+	bml_stat_means_and_covariance ; 2
+	bml_stat_correlation_coefficient ; 2
+	;;
+	bml_spfn_erf ; 1
+	bml_spfn_erfc ; 1
+	;;
+	bml_api_dot_ ; 2
