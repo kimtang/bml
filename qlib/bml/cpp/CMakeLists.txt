@@ -7,18 +7,24 @@ set(BOOST_ROOT "C:\\boost")
 add_library(bml SHARED "bml.cpp" "bml/random/random.cpp" "bml/math/distributions.cpp" "statistics.cpp" "special_functions.cpp"  )
 target_include_directories(bml PRIVATE "${PROJECT_SOURCE_DIR}/bml/math")
 target_include_directories(bml PRIVATE "${PROJECT_SOURCE_DIR}/bml/random")
-target_include_directories(bml PRIVATE "${PROJECT_SOURCE_DIR}/kdb")
 find_package(Boost REQUIRED)
 
 include(FetchContent)
 FetchContent_Declare(chk
         GIT_REPOSITORY https://github.com/KxSystems/kdb.git
 )
-
 FetchContent_MakeAvailable(chk)
+include_directories("${Boost_INCLUDE_DIRS}")
+
+include(FetchContent)
+FetchContent_Declare(kpi
+        GIT_REPOSITORY https://github.com/kimtang/kpi.git
+        GIT_TAG        main
+)
+FetchContent_MakeAvailable(kpi)
+include_directories("${CMAKE_BINARY_DIR}/_deps/kpi-src/qlib/kpi/cpp")
 
 set(CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD 1)
-
 
 # I recommend using SYSTEM when dealing with 3rd party code.
 # Avoids the hassle of warnings from a library you don't own.
@@ -28,7 +34,6 @@ set(CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD 1)
 message(PROJECT_SOURCE_DIR="${PROJECT_SOURCE_DIR}")
 include_directories("${PROJECT_SOURCE_DIR}")
 
-include_directories("${Boost_INCLUDE_DIRS}")
 # target_include_directories(bml SYSTEM PUBLIC ${Boost_INCLUDE_DIR})
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")

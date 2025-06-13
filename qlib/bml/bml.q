@@ -1,13 +1,13 @@
 
-d)lib bml.bml 
- Library for working with the os
+d)lib %bml%/qlib/bml/bml.q
+ Library for working with the boost mathematical library
  q).import.module`bml 
  q).import.module`bml.bml
  q).import.module"%bml%/qlib/bml/bml.q"
 
 .bml.summary:{ raze {([]mode:x;fnc:key .bml x) }@'`seed`rnd`dist} 
 
-d)fnc bml.bml.summary 
+d).bml.summary 
  Give a summary of this function
  q) .bml.summary[] 
 
